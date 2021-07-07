@@ -21,7 +21,7 @@ def GaussianBlurImage( A,sigma):
 
 def sp_noise(image, prob):
     output = np.zeros(image.shape, np.uint8)
-    thres = 1 - prob                    # threshold for our probabiblity of appearing noise
+    thres = 1 - prob        # threshold for our probability of appearing noise
     for i in range(image.shape[0]):
         for j in range(image.shape[1]):
             rdn = random.random()
@@ -35,15 +35,14 @@ def sp_noise(image, prob):
 
 # Def for deciding which noise should we implement.
 def myImNoise(A,param):
-    # Apply salt and peper if we chose it
+    # Apply salt and peper if we choose it
     if param =="saltandpepper":
         B = sp_noise(A, prob=0.05)
 
-    #Apply gaussian if we chose it
+    # Apply gaussian if we choose it
     elif param == "gaussian":
         B = GaussianBlurImage(A, sigma=1)
 
     else:
-
         print("Invalid param name.!! For noising please select saltandpepper or gaussian.")
     return B

@@ -45,7 +45,7 @@ def myConv2D(A, B, strides, param):
 
 def pad_Checker(B, A, param):
     n, n = B.shape
-    padv = int((n - 1) / 2)  # so the equation out=(input-kernel+2*padding)/strides+1 is converted to p=(kernel-1)/2 when
+    padv = int((n - 1) / 2)
 
     if param == 'same':  # When we defing that param='same' we defing that our output shape should be equal with input shape
         C = pad_image(A, size=padv)
@@ -54,11 +54,11 @@ def pad_Checker(B, A, param):
         padv = 0
         C = A
     else:
-        print("Invalid param name.!! For noising please select same or valid.")
+        print("Invalid param name.!! Choose same or valid.")
     return C, padv
 
 def pad_image(A, size):
     # Apply equal padding to all sides
     A_pad = np.zeros((A.shape[0] + 2 * size, A.shape[1] + 2 * size), dtype=np.float32)
-    A_pad[1 * size:-1 * size,1 * size:-1 * size] = A  # applying in new matrix the original video matrix leaving a outer shell full of zeros
+    A_pad[1 * size:-1 * size,1 * size:-1 * size] = A
     return A_pad
