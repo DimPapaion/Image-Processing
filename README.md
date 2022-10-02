@@ -1,7 +1,7 @@
-# Image-Processing
+# Image-Processing - 2D Convolution
 Gaussian, Salt and Pepper noise in images and Mean, Median filtering. 
 The original rgb image is converted into Grayscale and then we apply 
-Gaussian and Salt & Pepper noise. 
+Gaussian and Salt & Pepper noise using 2D Convolution from scratch. 
 ![img_2.png](resources/house.jpg)
 Gaussian Noise
 ![img_1.png](Results/Gray_Scale_Image.png)
